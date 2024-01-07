@@ -7,7 +7,7 @@
 int main(void)
 {
     TTF_Init();
-    TTF_Font *font = TTF_OpenFont("/mnt/mmc/Roms/APPS/inziu-iosevkaCC-SC-regular.ttf", 24);
+    TTF_Font *font = TTF_OpenFont("/mnt/SDCARD/inziu-iosevkaCC-SC-regular.ttf", 24);
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Surface *screen = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
