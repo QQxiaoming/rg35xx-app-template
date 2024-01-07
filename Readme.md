@@ -2,6 +2,8 @@
 
 本项目为rg35xx应用程序模版工程，用于开发rg35xx简单的应用程序。
 
+![img](./doc/img.png)
+
 ## 如何编译
 
 1. 使用docker获取编译环境
@@ -25,7 +27,7 @@ docker pull miyoocfw/toolchain-shared-uclibc:latest
 ```makefile
 TARGET = main
 C_SOURCES =  \
-		${wildcard $(SRCS_DIR)/*.c}
+	${wildcard $(SRCS_DIR)/*.c}
 CPP_SOURCES =  \
-		${wildcard $(SRCS_DIR)/*.cpp}
+	${wildcard $(SRCS_DIR)/*.cpp}
 ```
