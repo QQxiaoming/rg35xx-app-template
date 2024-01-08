@@ -23,6 +23,23 @@
 #define RG35XX_KEY_VOL_SUB  SDLK_t
 #define RG35XX_KEY_POWER    SDLK_POWER
 
+void drawText(SDL_Surface *screen, TTF_Font *font, char *text, int x, int y, int r, int g, int b) {
+    SDL_Color color = { r, g, b };
+    SDL_Surface *textSurface = TTF_RenderUTF8_Solid(font, text, color);
+    SDL_Rect position = { x, y, 0, 0 };
+    SDL_BlitSurface(textSurface, NULL, screen, &position);
+    SDL_FreeSurface(textSurface);
+}
+
+void clear(SDL_Surface *screen, int r, int g, int b) {
+    SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, r, g, b));
+}
+
+void refresh(SDL_Surface *screen) {
+    SDL_Flip(screen);
+    SDL_Flip(screen);
+}
+
 int main(void) {
     TTF_Init();
     TTF_Font *font = TTF_OpenFont("/mnt/SDCARD/helloworld/inziu-iosevkaCC-SC-regular.ttf", 24);
@@ -31,18 +48,10 @@ int main(void) {
     SDL_Surface *screen = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
     SDL_WM_SetCaption("SDL Test", NULL);
 
-    // 1. Clear the screen
-    SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
-    SDL_Flip(screen);
-    
-    // 2. Draw text to the screen
-    SDL_Color color = { 255, 255, 255 };
-    SDL_Surface *text = TTF_RenderText_Solid(font, "Hello World!", color);
-    SDL_Rect position = { 0, 0, 0, 0 };
-    SDL_BlitSurface(text, NULL, screen, &position);
-    SDL_FreeSurface(text);
-    SDL_Flip(screen);
-        
+    clear(screen, 0, 0, 0);
+    drawText(screen, font, "Hello World!", 0, 0, 255, 255, 255);
+    refresh(screen);
+
     SDL_Event event;
     int running = 1;
 
@@ -60,25 +69,15 @@ int main(void) {
                             break;
                         }
                         case RG35XX_KEY_A: {
-                            SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
-                            SDL_Flip(screen);
-                            SDL_Color color = { 255, 255, 255 };
-                            SDL_Surface *text = TTF_RenderUTF8_Solid(font, "你好，世界！", color);
-                            SDL_Rect position = { 0, 0, 0, 0 };
-                            SDL_BlitSurface(text, NULL, screen, &position);
-                            SDL_FreeSurface(text);
-                            SDL_Flip(screen);
+                            clear(screen, 0, 0, 0);
+                            drawText(screen, font, "你好，世界！", 0, 0, 255, 255, 255);
+                            refresh(screen);
                             break;
                         }
                         case RG35XX_KEY_B: {
-                            SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 0, 0, 0));
-                            SDL_Flip(screen);
-                            SDL_Color color = { 255, 255, 255 };
-                            SDL_Surface *text = TTF_RenderText_Solid(font, "Hello World!", color);
-                            SDL_Rect position = { 0, 0, 0, 0 };
-                            SDL_BlitSurface(text, NULL, screen, &position);
-                            SDL_FreeSurface(text);
-                            SDL_Flip(screen);
+                            clear(screen, 0, 0, 0);
+                            drawText(screen, font, "Hello World!", 0, 0, 255, 255, 255);
+                            refresh(screen);
                             break;
                         }
                         default:
