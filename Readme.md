@@ -34,7 +34,7 @@ CPP_SOURCES =  \
 
 ## keymap
 
-通过LD_PRELOAD加载j2k.so，可以将键盘映射为rg35XX的按键。
+通过LD_PRELOAD加载j2k.so，源码位于utils/j2k.c, 可以将键盘映射为rg35XX的按键。
 
 ```shell
 LD_PRELOAD=./j2k.so ./main
@@ -42,22 +42,23 @@ LD_PRELOAD=./j2k.so ./main
 
 按键映射如下：
 
-| key    | function |
-| ------ | -------- |
-| SDLK_w | Up       |
-| SDLK_d | Right    |
-| SDLK_s | Down     |
-| SDLK_q | Left     |
-| SDLK_x | X        |
-| SDLK_y | Y        |
-| SDLK_a | A        |
-| SDLK_b | B        |
-| SDLK_h | L1       |
-| SDLK_l | R1       |
-| SDLK_j | L2       |
-| SDLK_k | R2	    |
-| SDLK_n | SELECT   |
-| SDLK_m | START    |
-| SDLK_u | MENU     |
-| SDLK_r | VOL+     |
-| SDLK_t | VOL-     |
+| key        | function |
+| ---------- | -------- |
+| SDLK_w     | Up       |
+| SDLK_d     | Right    |
+| SDLK_s     | Down     |
+| SDLK_q     | Left     |
+| SDLK_x     | X        |
+| SDLK_y     | Y        |
+| SDLK_a     | A        |
+| SDLK_b     | B        |
+| SDLK_h     | L1       |
+| SDLK_l     | R1       |
+| SDLK_j     | L2       |
+| SDLK_k     | R2	    |
+| SDLK_n     | SELECT   |
+| SDLK_m     | START    |
+| SDLK_u     | MENU     |
+| SDLK_r     | VOL+     |
+| SDLK_t     | VOL-     |
+| SDLK_POWER | POWER    |
