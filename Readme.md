@@ -18,6 +18,10 @@ docker pull miyoocfw/toolchain-shared-uclibc:latest
 ./make.sh
 ```
 
+3. 输出目录
+
+编译输出位于./out目录下*.elf文件
+
 ## 如何添加自己的源文件
 
 1. 在src目录下添加自己的源文件，例如test.c
@@ -62,3 +66,22 @@ LD_PRELOAD=./j2k.so ./main
 | SDLK_r     | VOL+     |
 | SDLK_t     | VOL-     |
 | SDLK_POWER | POWER    |
+
+## 在pc上调试模拟运行
+
+在ubuntu上安装libsdl
+
+```shell
+sudo apt install libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libvorbisidec-dev  libsdl-sound1.2-dev libsdl-ttf2.0-dev
+```
+
+编译
+
+```shell
+./make_native.sh
+```
+
+输出目录
+
+编译输出位于./out_native目录下*.elf文件，可以直接在pc上运行，并通过键盘模拟运行，方便将程序调试到可运行状态，再上板子测试和发布。
+

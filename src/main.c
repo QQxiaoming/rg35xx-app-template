@@ -4,6 +4,8 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 
+#define TTF_FILE_PATH "/mnt/SDCARD/helloworld/inziu-iosevkaCC-SC-regular.ttf"
+
 #define RG35XX_KEY_Up       SDLK_w
 #define RG35XX_KEY_Right    SDLK_d
 #define RG35XX_KEY_Down     SDLK_s
@@ -42,7 +44,11 @@ void refresh(SDL_Surface *screen) {
 
 int main(void) {
     TTF_Init();
-    TTF_Font *font = TTF_OpenFont("/mnt/SDCARD/helloworld/inziu-iosevkaCC-SC-regular.ttf", 24);
+    TTF_Font *font = TTF_OpenFont(TTF_FILE_PATH, 24);
+    if(!font) {
+        printf("TTF_OpenFont err!\n");
+        return 0;
+    }
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Surface *screen = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
