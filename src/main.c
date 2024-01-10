@@ -4,7 +4,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_ttf.h>
 
-#define TTF_FILE_PATH "/mnt/SDCARD/helloworld/inziu-iosevkaCC-SC-regular.ttf"
+#define TTF_FILE_PATH "inziu-iosevkaCC-SC-regular.ttf"
 
 #define RG35XX_KEY_Up       SDLK_w
 #define RG35XX_KEY_Right    SDLK_d
@@ -51,7 +51,7 @@ int main(void) {
     }
     SDL_Init(SDL_INIT_VIDEO);
 
-    SDL_Surface *screen = SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE);
+    SDL_Surface *screen = SDL_SetVideoMode(640, 480, 32, SDL_SWSURFACE);
     SDL_WM_SetCaption("SDL Test", NULL);
 
     clear(screen, 0, 0, 0);
