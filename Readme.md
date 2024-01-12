@@ -1,3 +1,6 @@
+[![CI](https://github.com/QQxiaoming/rg35xx-app-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/QQxiaoming/rg35xx-app-template/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/qqxiaoming/rg35xx-app-template.svg?colorB=f48041&style=flat-square)](https://github.com/QQxiaoming/rg35xx-app-template)
+
 # 自己开发rg35xx应用程序模版工程 （用于GarlicOS）
 
 本项目为rg35xx应用程序模版工程，用于开发rg35xx简单的应用程序。
