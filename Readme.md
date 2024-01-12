@@ -68,7 +68,7 @@ LD_PRELOAD=./j2k.so ./main
 | SDLK_u     | MENU     |
 | SDLK_r     | VOL+     |
 | SDLK_t     | VOL-     |
-| SDLK_POWER | POWER    |
+| SDLK_p     | POWER    |
 
 ## 在pc上调试模拟运行
 
