@@ -40,7 +40,7 @@ jobs:
           tar -czf release.tar.gz out/j2k.so out/main.elf src/res
 
       - name: Upload build asserts
-        uses: actions/upload-artifact@v4.3.4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: release
           path: |
